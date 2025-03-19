@@ -1,0 +1,120 @@
+:root {
+    --background-color: #1d2021; /* Cor de fundo geral (bg0) */
+    --box-color: #282828; /* Fundo de seções como header e footer (bg1) */
+    --text-color: #d4be98; /* Cor do texto principal (fg0) */
+    --hover-color: #d4be98; /* Cor do texto ao passar o mouse */
+    --link-color: #a9b665; /* Cor dos links */
+    --accent-color: #ea6962; /* Cor de destaque (vermelho) */
+    --secondary-accent: #7daea3; /* Cor secundária (azul) */
+}
+
+/* BODY */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Jersey 10", serif;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    max-height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--box-color);
+    background-image: url("/assets/img/bg/topographic_txt.png");
+    border-radius: 24px;
+    padding: 1rem;
+}
+
+.logo-container {
+    align-content: flex-start;
+    padding-right: 5rem;
+}
+
+.logo {
+    max-height: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+    margin: 0 5rem 0 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 3rem;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    color: var(--hover-color);
+    font-size: 3.5rem;
+    transition: 0.5s;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--box-color);
+    background-image: url("/assets/img/bg/topographic_txt.png");
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+/* FOOTER */
+
+footer .social-media-list ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+footer .social-media-list ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--text-color);
+    fill: currentColor;
+}
+
+footer a:hover {
+    color: var(--hover-color);
+}
+
+footer .footer-email {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+footer .footer-navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    list-style: none;
+}
