@@ -1,42 +1,66 @@
-:root {
-    --background-color: #1d2021; /* Cor de fundo geral (bg0) */
-    --box-color: #282828; /* Fundo de seções como header e footer (bg1) */
-    --text-color: #d4be98; /* Cor do texto principal (fg0) */
-    --hover-color: #d4be98; /* Cor do texto ao passar o mouse */
-    --link-color: #a9b665; /* Cor dos links */
-    --accent-color: #ea6962; /* Cor de destaque (vermelho) */
-    --secondary-accent: #7daea3; /* Cor secundária (azul) */
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS
+   ========================================================================== */
+   :root {
+    --background-color: #1a1d2e;  /* Azul escuro profundo (bg0 modificado) */
+    --box-color: #25283d;         /* Azul m�dio para se��es (bg1 ajustado) */
+    --text-color: #d4d7e8;        /* Branco azulado suave (fg0 ajustado) */
+    --hover-color: #d4d7e8;       /* Mesmo que o texto principal */
+    --link-color: #6c8ebf;        /* Azul m�dio desaturado para links */
+    --accent-color: #5f87af;      /* Azul principal de destaque */
+    --secondary-accent: #5faf87;  /* Verde-azulado para contraste secund�rio */
 }
 
-/* BODY */
+/* ==========================================================================
+   ESTILIZAÇÃO GERAL (BODY)
+   ========================================================================== */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: "Jersey 10", serif;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -1px;
 }
 
-/* HEADER */
+/* ==========================================================================
+   HEADER (Topo do Site)
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Minecraftia';
+    src: url(../fonts/Minecraftia-Regular.woff) format('woff');
+    font-weight: normal;
+}
+
 header {
     display: flex;
-    max-height: 100px;
+    max-height: 3rem;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--box-color);
-    background-image: url("/assets/img/bg/topographic_txt.png");
-    border-radius: 24px;
+    background-color: transparent; /* Fundo transparente para estilo wireframe */
+    border-bottom: 2px dashed var(--accent-color); /* Borda dashed para o efeito wireframe */
     padding: 1rem;
+
 }
 
 .logo-container {
+    display: inline-flex;
+    align-items: center;
     align-content: flex-start;
     padding-right: 5rem;
 }
 
 .logo {
-    max-height: 120px;
+    max-height: 4rem;
+}
+
+.logo-container span {
+    font-family: 'bytesized';
+    font-weight: bolder;
+    font-size: 2rem;
+    color: var(--accent-color);
 }
 
 .navbar ul {
@@ -45,55 +69,65 @@ header {
     gap: 4rem;
     margin: 0 5rem 0 0;
     padding: 0;
-    font-size: 32px;
 }
 
 .navbar a {
     text-decoration: none;
     color: var(--link-color);
-    font-size: 3rem;
+
+    font-family: 'Minecraftia';
+    font-size: 2rem;
+
     transition: 0.5s;
 }
 
 .navbar a:hover {
     color: var(--hover-color);
-    font-size: 3.5rem;
+    font-size: 2.2rem;
     transition: 0.5s;
 }
 
-/* MAIN */
+/* ==========================================================================
+   MAIN (Conteúdo Principal)
+   ========================================================================== */
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
 
+/* ==========================================================================
+   FOOTER (Rodapé do Site)
+   ========================================================================== */
 footer {
     display: flex;
+    max-height: 6rem;
     justify-content: space-around;
     align-items: center;
     color: var(--text-color);
-    background-color: var(--box-color);
-    background-image: url("/assets/img/bg/topographic_txt.png");
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+    background-color: transparent; /* Fundo transparente para estilo wireframe */
+    border-top: 2px dashed var(--accent-color); /* Borda dashed para o efeito wireframe */
+    padding-top: 1rem;
 }
-/* FOOTER */
 
+/* Footer - Lista de Mídias Sociais */
 footer .social-media-list ul {
     display: flex;
     flex-direction: column;
     list-style: none;
+    padding: 0;
 }
 
+/* Footer - Itens da Lista de Mídias Sociais */
 footer .social-media-list ul li a {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
 }
 
+/* Footer - Links Gerais */
 footer a {
     text-decoration: none;
     color: var(--text-color);
@@ -104,6 +138,7 @@ footer a:hover {
     color: var(--hover-color);
 }
 
+/* Footer - Seção de Email */
 footer .footer-email {
     display: inline-flex;
     justify-content: center;
@@ -111,6 +146,7 @@ footer .footer-email {
     gap: 0.5rem;
 }
 
+/* Footer - Navbar do Rodapé */
 footer .footer-navbar ul {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
 ---
 layout: main
-title: "Página Inicial"
+title: "Tildo"
 ---
 
 <div class="animated-header">
