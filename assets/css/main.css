@@ -2,25 +2,25 @@
    VARIÁVEIS GLOBAIS
    ========================================================================== */
    :root {
-    --background-color: #1a1d2e;  /* Azul escuro profundo (bg0 modificado) */
-    --box-color: #25283d;         /* Azul m�dio para se��es (bg1 ajustado) */
-    --text-color: #d4d7e8;        /* Branco azulado suave (fg0 ajustado) */
-    --hover-color: #d4d7e8;       /* Mesmo que o texto principal */
-    --link-color: #6c8ebf;        /* Azul m�dio desaturado para links */
-    --accent-color: #5f87af;      /* Azul principal de destaque */
-    --secondary-accent: #5faf87;  /* Verde-azulado para contraste secund�rio */
+    --background-color: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #00020c;    /* Fundo escuro profundo (típico do Ayu) */
+    --box-color: #1A1F29;           /* Camada intermediária com tom azulado */
+    --text-color: #B3BECC;          /* Cinza-azulado claro para texto */
+    --hover-color: #E6B450;         /* Laranja suave do Ayu para hover */
+    --link-color: #36A3D9;          /* Azul vibrante (tom principal do Ayu) */
+    --accent-color: #FFB454;        /* Laranja-dourado para destaques */
+    --secondary-accent: #A3BE8C;    /* Verde pastel para contraste */
 }
 
 /* ==========================================================================
    ESTILIZAÇÃO GERAL (BODY)
    ========================================================================== */
 body {
-    background-color: var(--background-color);
+    background: var(--background-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Monocraft';
     letter-spacing: -1px;
 }
 
@@ -29,8 +29,8 @@ body {
    ========================================================================== */
 
 @font-face {
-    font-family: 'Minecraftia';
-    src: url(../fonts/Minecraftia-Regular.woff) format('woff');
+    font-family: 'Monocraft';
+    src: url(../fonts/Monocraft.woff) format('woff');
     font-weight: normal;
 }
 
@@ -60,7 +60,7 @@ header {
     font-family: 'bytesized';
     font-weight: bolder;
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--link-color);
 }
 
 .navbar ul {
@@ -75,7 +75,7 @@ header {
     text-decoration: none;
     color: var(--link-color);
 
-    font-family: 'Minecraftia';
+    font-family: 'Monocraft';
     font-size: 2rem;
 
     transition: 0.5s;
@@ -84,7 +84,8 @@ header {
 .navbar a:hover {
     color: var(--hover-color);
     font-size: 2.2rem;
-    transition: 0.5s;
+    font-weight: bolder;
+    transition: 0.3s;
 }
 
 /* ==========================================================================
