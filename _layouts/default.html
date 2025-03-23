@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Jersey+10&display=swap" rel="stylesheet">    
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/9204e9c765.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header>
-        {% include header.html %}
-    </header>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/hero.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/9204e9c765.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>{% include header.html %}</header>
 
     <main>
-      {{ content }}
+      <div class="hero-section">
+        <div class="hero-text">
+          <h1 style="color: var(--accent-color);">Olá, eu sou o Tildo.</h1>
+          <h2 style="color: var(--secondary-accent)">Subtítulo maneiro.</h2>
+          <span>Sou um estudante de Engenharia de Software <br> e nesse corner você acompanhará minha jornada como desenvolvedor.</span>
+        </div>
+        <div class="hero-image-container">
+          <div class="left-block"></div>
+          <div class="top-left-block"></div>
+          <img
+            src="/assets/img/profile/tildoprofile.png"
+            alt="Foto de perfil do Tildo"
+            class="hero-image"
+          />
+          <div class="right-block"></div>
+          <div class="bottom-right-block"></div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-        {% include footer.html %}
-    </footer>
-
-</body>
+    <footer>{% include footer.html %}</footer>
+  </body>
 </html>

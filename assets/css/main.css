@@ -71,9 +71,13 @@ header {
     padding: 0;
 }
 
+.navbar li {
+    position: relative; /* Necessário para garantir que a imagem de fundo se ajuste corretamente */
+}
+
 .navbar a {
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--text-color);
 
     font-family: 'Monocraft';
     font-size: 2rem;
@@ -83,7 +87,7 @@ header {
 
 .navbar a:hover {
     color: var(--hover-color);
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: bolder;
     transition: 0.3s;
 }
