@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/hero.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Jersey+10&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
-    <script
-      src="https://kit.fontawesome.com/9204e9c765.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <header>{% include header.html %}</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/hero.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Jersey+10&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/9204e9c765.js" crossorigin="anonymous"></script>
+</head>
 
-    <main>
-      <section id="hero-section">
-        <div class="hero-text">
-          <h1 style="color: var(--accent-color);">Olá, eu sou o Tildo.</h1>
-          <h2 style="color: var(--secondary-accent)">Subtítulo maneiro.</h2>
-          <span>Sou um estudante de Engenharia de Software <br> e nesse corner você acompanhará minha jornada como desenvolvedor.</span>
-        </div>
-        <div class="hero-image-container">
-          <div class="left-block"></div>
-          <div class="top-left-block"></div>
-          <img
-            src="/assets/img/profile/tildoprofile.png"
-            alt="Foto de perfil do Tildo"
-            class="hero-image"
-          />
-          <div class="right-block"></div>
-          <div class="bottom-right-block"></div>
-        </div>
-      </section>
+<body>
+  <header>{% include header.html %}</header>
 
-      <section id="projects">
-        <div class="heading">
-          <div class="h-block"></div>
-          <h1>Projetos</h1>
-          <div class="separator"></div>
-        </div>
-      </section>
+  <main>
+    <section id="hero-section">
+      <div class="hero-text">
+        <h1 style="color: var(--accent-color);">Olá, eu sou o Tildo.</h1>
+        <h2 style="color: var(--secondary-accent)">Subtítulo maneiro.</h2>
+        <span>Sou um estudante de Engenharia de Software <br> e nesse corner você acompanhará minha jornada como
+          desenvolvedor.</span>
       </div>
-    </main>
+      <div class="hero-image-container">
+        <div class="left-block"></div>
+        <div class="top-left-block"></div>
+        <img src="/assets/img/profile/tildoprofile.png" alt="Foto de perfil do Tildo" class="hero-image" />
+        <div class="right-block"></div>
+        <div class="bottom-right-block"></div>
+      </div>
+    </section>
 
-    <footer>{% include footer.html %}</footer>
-  </body>
+    <section id="projects">
+      <div class="heading">
+        <div class="h-block"></div>
+        <h1>Projetos</h1>
+        <div class="separator"></div>
+      </div>
+
+      <div class="cards-container">
+        {% for post in site.posts %}
+        <div class="card">
+          <img class="card-img" src="{{ post.img }}">
+          <div class="right-block"></div>
+          <div class="card-body">
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="{{ post.url }}" class="btn"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="see-all">
+        <a href="#" class="btn">Outros Projetos</a>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer>{% include footer.html %}</footer>
+</body>
+
 </html>

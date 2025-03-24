@@ -68,6 +68,7 @@
     position: relative;
     background: var(--box-color);
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -92,4 +93,75 @@
     max-width: 100%;
     border: 2px dashed var(--link-color);
     border-bottom: 2px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 24rem);
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    margin: 0 0 4rem 0;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed var(--accent-color);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 2rem;
+    background: var(--background-color);
+}
+
+.card .right-block {
+    position: relative;
+    left: 17rem;
+    top: -14rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--secondary-accent);
+}
+.card-img {
+    border: 2px dashed var(--link-color);
+}
+
+.card-title {
+    color: var(--accent-color)
+}
+
+.card-text {
+    color: var(--secondary-accent);
+}
+
+.card .card-body .btn {
+    position: relative;
+    left: 90%;
+
+    background: var(--secondary-accent);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.card .card-body .btn:hover {
+    background: var(--accent-color);
+}
+
+.see-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2rem 0;
+}
+
+.see-all .btn {
+    background: var(--background-color);
+    color: var(--accent-color);
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.see-all .btn:hover {
+    background: var(--accent-color);
+    color: var(--box-color);
 }
