@@ -3,7 +3,8 @@
    ========================================================================== */
    :root {
     --background-color: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #00020c;    /* Fundo escuro profundo (típico do Ayu) */
-    --box-color: #1A1F29;           /* Camada intermediária com tom azulado */
+    --secondary-bg-color: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #000314;
+    --box-color: #0c1a38;           /* Camada intermediária com tom azulado */
     --text-color: #B3BECC;          /* Cinza-azulado claro para texto */
     --hover-color: #E6B450;         /* Laranja suave do Ayu para hover */
     --link-color: #36A3D9;          /* Azul vibrante (tom principal do Ayu) */
@@ -15,6 +16,8 @@
    ESTILIZAÇÃO GERAL (BODY)
    ========================================================================== */
 body {
+    margin: 0;
+    padding: 0;
     background: var(--background-color);
     color: var(--text-color);
     display: flex;

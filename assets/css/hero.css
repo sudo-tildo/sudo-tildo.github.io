@@ -1,3 +1,7 @@
+/* ========================================================================== */
+/*    HERO */
+/* ========================================================================== */
+
 #hero-section {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -66,10 +70,11 @@
 
 #projects {
     position: relative;
-    background: var(--box-color);
+    background: var(--secondary-bg-color);
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
 }
 
 .heading {
@@ -84,15 +89,14 @@
 .h-block {
     width: 1.5rem;
     height: 1.5rem;
-    border: 2px dashed var(--link-color);
+    background: var(--accent-color);
     justify-self: flex-start;
 }
 
 .separator {
     flex: 1;
     max-width: 100%;
-    border: 2px dashed var(--link-color);
-    border-bottom: 2px;
+    border: 2px dashed var(--accent-color);
 }
 
 .cards-container {
@@ -101,6 +105,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .card {
     margin: 0 0 4rem 0;
     width: 18rem;
@@ -110,7 +115,7 @@
     border-radius: 12px;
     overflow: hidden;
     padding: 2rem;
-    background: var(--background-color);
+    background: var(--box-color);
 }
 
 .card .right-block {
@@ -121,6 +126,7 @@
     height: 1.5rem;
     background-color: var(--secondary-accent);
 }
+
 .card-img {
     border: 2px dashed var(--link-color);
 }
@@ -148,13 +154,13 @@
 
 .see-all {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin: 0 0 2rem 0;
 }
 
 .see-all .btn {
-    background: var(--background-color);
+    background: var(--box-color);
     color: var(--accent-color);
     padding: 10px;
     border-radius: 8px;
@@ -164,4 +170,33 @@
 .see-all .btn:hover {
     background: var(--accent-color);
     color: var(--box-color);
+}
+
+/* ========================================================================== */
+/*    POSTS */
+/* ========================================================================== */
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#posts .separator {
+    border: 2px dashed var(--link-color);
+}
+
+#posts .h-block {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--link-color);
+    justify-self: flex-start;
+}
+
+#posts .card .btn {
+    position: unset;    
+    margin-top: 2rem;
+    width: 100%;
+    text-decoration: none;
 }
