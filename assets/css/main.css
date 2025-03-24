@@ -42,13 +42,12 @@ header {
     background-color: transparent; /* Fundo transparente para estilo wireframe */
     border-bottom: 2px dashed var(--accent-color); /* Borda dashed para o efeito wireframe */
     padding: 1rem;
-
 }
 
 .logo-container {
     display: inline-flex;
     align-items: center;
-    align-content: flex-start;
+    justify-content: flex-start;
     padding-right: 5rem;
 }
 

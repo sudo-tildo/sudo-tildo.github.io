@@ -1,4 +1,4 @@
-.hero-section {
+#hero-section {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: space-evenly;
@@ -58,4 +58,38 @@
     width: 0.5rem;
     height: 0.5rem;
     background-color: var(--accent-color);
+}
+
+/* ========================================================================== */
+/*    PROJECTS */
+/* ========================================================================== */
+
+#projects {
+    position: relative;
+    background: var(--box-color);
+    display: flex;
+    width: 100%;
+}
+
+.heading {
+    margin-left: 1rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.h-block {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px dashed var(--link-color);
+    justify-self: flex-start;
+}
+
+.separator {
+    flex: 1;
+    max-width: 100%;
+    border: 2px dashed var(--link-color);
+    border-bottom: 2px;
 }
