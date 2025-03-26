@@ -139,13 +139,24 @@
     color: var(--secondary-accent);
 }
 
-.card .card-body .btn {
-    position: relative;
-    left: 90%;
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
 
+.card-tags .tag {
+    padding: 2px 5px 2px 5px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.card .card-body .btn {
     background: var(--secondary-accent);
     padding: 10px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .card .card-body .btn:hover {
@@ -192,6 +203,14 @@
     height: 1.5rem;
     background: var(--link-color);
     justify-self: flex-start;
+}
+
+#posts .card-body h3 {
+    margin-top: 0;
+}
+
+#posts .card-body > p {
+    margin-bottom: 2rem;
 }
 
 #posts .card .btn {

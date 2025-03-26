@@ -62,7 +62,7 @@ header {
     font-family: 'bytesized';
     font-weight: bolder;
     font-size: 2rem;
-    color: var(--link-color);
+    color: var(--accent-color);
 }
 
 .navbar ul {

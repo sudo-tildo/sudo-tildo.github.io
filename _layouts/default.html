@@ -18,69 +18,7 @@
   <header>{% include header.html %}</header>
 
   <main>
-    <section id="hero-section">
-      <div class="hero-text">
-        <h1 style="color: var(--accent-color);">Olá, eu sou o Tildo.</h1>
-        <h2 style="color: var(--secondary-accent)">Subtítulo maneiro.</h2>
-        <span>Sou um estudante de Engenharia de Software <br> e nesse corner você acompanhará minha jornada como
-          desenvolvedor.</span>
-      </div>
-      <div class="hero-image-container">
-        <div class="left-block"></div>
-        <div class="top-left-block"></div>
-        <img src="/assets/img/profile/tildoprofile.png" alt="Foto de perfil do Tildo" class="hero-image" />
-        <div class="right-block"></div>
-        <div class="bottom-right-block"></div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="heading">
-        <div class="h-block"></div>
-        <h1>Projetos</h1>
-        <div class="separator"></div>
-      </div>
-
-      <div class="cards-container">
-        {% for project in site.projects %}
-        <div class="card">
-          <img class="card-img" src="{{ project.img }}">
-          <div class="right-block"></div>
-          <div class="card-body">
-            <h3 class="card-title">{{ project.title }}</h3>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="{{ project.url }}" class="btn"><i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-      <div class="see-all">
-        <a href="#" class="btn">View All Projects</a>
-      </div>
-    </section>
-
-    <section id="posts">
-      <div class="heading">
-        <div class="h-block"></div>
-        <h1>Posts</h1>
-        <div class="separator"></div>
-      </div>
-
-      <div class="cards-container">
-        {% for post in site.posts %}
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">{{ post.title }}</h3>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="{{ post.url }}" class="btn">Full Post <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+    {{ content }}
   </main>
 
   <footer>{% include footer.html %}</footer>

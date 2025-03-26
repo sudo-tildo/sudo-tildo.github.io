@@ -22,7 +22,7 @@ title: Tildo's Here
 # email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal blog. I write about my thoughts, experiences and things I learn.
-# baseurl: "/sudo-tildo.github.io/index" # the subpath of your site, e.g. /blog
+# baseurl: "/sudo-tildo.github.io/" # the subpath of your site, e.g. /blog
 url: "https://sudo-tildo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyll
 github_username:  sudo-tildo
@@ -31,8 +31,6 @@ github_username:  sudo-tildo
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-watch
-
 
 collections:
   posts:
