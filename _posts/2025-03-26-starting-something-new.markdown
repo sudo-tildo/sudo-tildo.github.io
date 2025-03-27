@@ -9,9 +9,9 @@ img: #
 
 I'm starting this blog to help me stay on track with my schedule. It will serve as a daily reminder that I need to improve—not because I want to get hired or fit into some company culture as a "role model" developer. Not even close. I do it simply because I genuinely enjoy programming and seeing good results. And as a natural consequence, that will make me a strong candidate for any position.
 
-> "*Seek strength. The rest, will follow...*" -- King Vendrick, *Dark Souls 2 Scholar of The First Sin*
+> "*Seek strength. The rest will follow...*" -- King Vendrick, *Dark Souls 2 Scholar of The First Sin*
 
-This quote perfectly captures what I mean about become better.
+This quote perfectly captures what I mean about becoming better.
 
 I find it incredibly fun that a developer can create tools to solve their own problems or help others with theirs.
 
