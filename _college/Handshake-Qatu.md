@@ -1,0 +1,25 @@
+---
+layout: post
+title: "HandShake E-Commerce"
+description: "A Shopee-like E-Commerce Website"
+thumb: "https://media.licdn.com/dms/image/v2/D4D22AQEq3Z2Lnj7eyw/feedshare-shrink_1280/B4DZdIGHG0GgAk-/0/1749261251660?e=1758153600&v=beta&t=OIlSrgw5V8W23mtOi6NM44mfiha2HB8URTJK1Fa1R6Q"
+categories: [typescript, nestjs, react]
+link: https://www.linkedin.com/feed/update/urn:li:activity:7337154988458106880/
+---
+
+Developed in collaboration with colleagues as part of a college project, this application features secure authentication using JWT and Google OAuth2, authorization management with Passport, a seller control panel (stock management, reviews, etc.), an administrative panel for approving or rejecting seller accounts/products, and an integrated user–seller chat system.
+
+![home page of the website](https://media.licdn.com/dms/image/v2/D4D22AQEq3Z2Lnj7eyw/feedshare-shrink_1280/B4DZdIGHG0GgAk-/0/1749261251660?e=1758153600&v=beta&t=OIlSrgw5V8W23mtOi6NM44mfiha2HB8URTJK1Fa1R6Q)
+
+### Role & Responsibilities
+
+During development, I served as the backend lead, responsible for implementing authentication, authorization, the product CRUD functionality, and the chat system.
+We opted for monolithic architecture in NestJS for simplicity and maintainability, given the project’s scale and team experience.
+
+### Key Achievement
+
+Optimized product controller performance to handle thousands of product records efficiently. Initially, the main page took over a second to load all stored products, creating a bottleneck when users logged in. To address this, I implemented pagination with filtering, allowing the API to return only the specific amount of data requested by the client. This optimization reduced response times from over one second to under 400 milliseconds, significantly improving the user experience.
+
+![product filtering panel](https://media.licdn.com/dms/image/v2/D4D22AQHbjrqKlxNb1A/feedshare-shrink_1280/B4DZdIGHG5HkAk-/0/1749261251653?e=1758153600&v=beta&t=dzC0W67WUl_sxcIeW96ySaxxLec5neaq5TaOJM9xIc0)
+
+You can read the full post on my LinkedIn: [here](https://www.linkedin.com/feed/update/urn:li:activity:7337154988458106880/)
