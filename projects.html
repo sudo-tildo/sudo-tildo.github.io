@@ -6,7 +6,7 @@ permalink: /projects
 <div class="cards-container" style="display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: unset;">
     {% for project in site.projects %}
     <div class="card">
-        <img class="card-img" src="{{ project.thumb }}" />
+        <img class="card-img" src="{{ project.thumb }}"/>
         <div class="right-block"></div>
         <div class="card-body">
             <h3 class="card-title">{{ project.title }}</h3>
@@ -20,4 +20,8 @@ permalink: /projects
         </div>
     </div>
     {% endfor %}
+</div>
+
+<div class="see-all">
+    <a href="college.html" class="btn-sec btn">See College Projects</a>
 </div>
