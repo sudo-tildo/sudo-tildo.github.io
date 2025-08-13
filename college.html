@@ -1,0 +1,23 @@
+---
+layout: default
+permalink: /college
+---
+
+<div class="cards-container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: unset; gap: 3rem;">
+    {% for college in site.college %}
+    <div class="card">
+        <img class="card-img" src="{{ college.thumb }}" />
+        <div class="right-block"></div>
+        <div class="card-body">
+            <h3 class="card-title">{{ college.title }}</h3>
+            <p class="card-text">{{ college.description }}</p>
+            <div class="card-tags">
+                {% for ctg in college.categories %}
+                <p class="tag">{{ ctg }}</p>
+                {% endfor %}
+            </div>
+            <a href="{{ college.url }}" class="btn">See More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

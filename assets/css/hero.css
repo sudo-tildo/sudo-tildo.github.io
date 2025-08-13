@@ -164,21 +164,28 @@
 }
 
 .see-all {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     margin: 0 0 2rem 0;
 }
 
 .see-all .btn {
-    background: var(--box-color);
-    color: var(--accent-color);
+    background: var(--link-color);
+    color: var(--box-color);
     padding: 10px;
     border-radius: 8px;
     text-decoration: none;
+    text-align: center;
 }
 
-.see-all .btn:hover {
+.see-all .btn-sec {
+    background: var(--secondary-accent);
+    color: var(--box-color);
+}
+
+.see-all .btn:hover, .btn-sec:hover {
     background: var(--accent-color);
     color: var(--box-color);
 }
