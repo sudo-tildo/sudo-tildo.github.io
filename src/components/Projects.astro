@@ -1,0 +1,78 @@
+---
+import {FolderOpen, ExternalLink, Github} from "lucide-react";
+import {Button} from "./ui/button";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "./ui/card";
+import {Badge} from "@/components/ui/badge";
+import {getCollection} from "astro:content";
+import {Image} from 'astro:assets';
+
+const projects = (await getCollection('projects')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const latest = projects.slice(0, 4);
+---
+
+<section id="projects" class="py-20 px-6 bg-muted">
+    <div class="max-w-6xl mx-auto">
+        <div
+                class="bg-secondary text-secondary-foreground px-4 py-2 inline-flex mb-4 font-mono font-bold uppercase tracking-wider box-shadow-foreground">
+            <FolderOpen/>
+        </div>
+        <div class="bg-secondary text-secondary-foreground px-4 py-2 mb-12 w-1/3 box-shadow-foreground">
+            <h2 class="text-4xl font-bold">PROJECTS I BUILT</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                latest.map((project) => (
+                        <Card
+                                className="brutalist-border brutalist-shadow bg-card hover:translate-x-1 hover:-translate-y-1 transition-transform">
+                            <div
+                                    class="aspect-video bg-gradient-to-br from-blue-900 to-blue-700 relative overflow-hidden dotted-border">
+                                <Image src={project.data.heroImage} inferSize={true} alt=""/>
+                            </div>
+                            <CardHeader>
+                                <CardTitle className="font-heading text-accent">
+                                    {project.data.title}
+                                </CardTitle>
+                                <CardDescription className="font-mono text-sm">
+                                    {project.data.description}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    {
+                                        project.data.tags?.map((tag) => (
+                                                <Badge className="bg-accent text-accent-foreground font-mono">
+                                                    {tag}
+                                                </Badge>
+                                        ))
+                                    }
+                                </div>
+                                <a href={`/projects/${project.id}/`}>
+                                    <Button
+                                            size="sm"
+                                            className="brutalist-border bg-accent text-accent-foreground font-mono"
+                                    >
+                                        <ExternalLink className="mr-1 h-3 w-3"/>
+                                        SEE MORE
+                                    </Button>
+                                </a>
+                            </CardContent>
+                        </Card>
+                ))
+            }
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/projects">
+                <Button
+                        variant="outline"
+                        className="brutalist-border brutalist-shadow font-mono uppercase bg-transparent"
+                >
+                    VIEW ALL PROJECTS
+                </Button>
+            </a>
+        </div>
+    </div>
+</section>
