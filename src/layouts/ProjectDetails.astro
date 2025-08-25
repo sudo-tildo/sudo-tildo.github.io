@@ -1,0 +1,85 @@
+---
+import '../styles/global.css'
+import '../styles/App.css';
+import {Image} from 'astro:assets';
+import type {CollectionEntry} from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import {Footer} from '../components/Footer';
+import FormattedDate from '../components/FormattedDate.astro';
+import {Header} from '../components/Header';
+import {Button} from '@/components/ui/button';
+import {Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
+type Props = CollectionEntry<'projects'>['data'];
+
+const {
+    title,
+    description,
+    pubDate,
+    heroImage,
+    github,
+    linkedin,
+    link,
+} = Astro.props;
+---
+
+
+<html lang="en">
+<head>
+    <BaseHead title={title} description={description}/>
+    <title>{title}</title>
+</head>
+
+<body>
+<Header/>
+<main class="flex justify-center">
+    <article class="flex-y bg-card mx-20 my-10 max-w-6xl p-10 box-shadow border-2 border-foreground">
+        <div class="inline=flex justify-center">
+            {heroImage &&
+                    <Image class="block mx-auto mb-10 max-w-120 box-shadow-secondary" inferSize={true} src={heroImage} alt=""/>
+            }
+        </div>
+        <div class="px-30 prose">
+            <div class="title">
+                <h1 class="text-accent text-4xl font-bold mb-4">{title}</h1>
+            </div>
+            <div id="content" class="text-justify space-y-5">
+                <slot/>
+            </div>
+            <div class="flex mt-10 gap-10">
+                {github &&
+                        <a href={github} target="_blank">
+                            <Button
+                                    size="md"
+                                    className="brutalist-border bg-accent text-accent-foreground font-mono font-bold p-2 items-vertical">
+                                <Github></Github>
+                                Source Code
+                            </Button>
+                        </a>
+                }
+                {linkedin &&
+                        <a href={linkedin} target="_blank">
+                            <Button
+                                    size="md"
+                                    className="brutalist-border bg-accent text-accent-foreground font-mono font-bold p-2 items-vertical">
+                                <Linkedin></Linkedin>
+                                Post
+                            </Button>
+                        </a>
+                }
+                {link &&
+                        <a href={link} target="_blank">
+                            <Button
+                                    size="md"
+                                    className="brutalist-border bg-accent text-accent-foreground font-mono font-bold p-2 items-vertical">
+                                <SquareArrowOutUpRight></SquareArrowOutUpRight>
+                                Check it out
+                            </Button>
+                        </a>
+                }
+            </div>
+        </div>
+    </article>
+</main>
+<Footer/>
+</body>
+</html>

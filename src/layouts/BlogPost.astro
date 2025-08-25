@@ -1,0 +1,53 @@
+---
+import '../styles/global.css'
+import '../styles/App.css';
+import {Image} from 'astro:assets';
+import type {CollectionEntry} from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import {Footer} from '../components/Footer';
+import FormattedDate from '../components/FormattedDate.astro';
+import {Header} from '../components/Header';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <BaseHead title={title} description={description}/>
+    <title>{title}</title>
+</head>
+
+<body>
+<Header/>
+<main class="flex justify-center">
+    <article class="flex-y bg-card mx-20 my-10 max-w-6xl p-10 box-shadow border-2 border-foreground">
+        <div class="inline=flex justify-center">
+            {heroImage &&
+                    <Image class="block mx-auto mb-10 max-w-120" inferSize={true}  src={heroImage} alt=""/>}
+        </div>
+        <div class="px-30 prose">
+            <div class="title">
+                <div class="date font-bold">
+                    <FormattedDate date={pubDate}/>
+                    {
+                        updatedDate && (
+                                    <div class="last-updated-on">
+                                        Last updated on
+                                        <FormattedDate date={updatedDate}/>
+                                    </div>
+                        )
+                    }
+                </div>
+                <h1 class="text-accent text-4xl font-bold mb-4">{title}</h1>
+            </div>
+            <div id="content" class="text-justify space-y-5">
+            <slot/>
+            </div>
+        </div>
+    </article>
+</main>
+<Footer/>
+</body>
+</html>
