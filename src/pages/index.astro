@@ -1,0 +1,36 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import {Footer} from '../components/Footer';
+import {Header} from '../components/Header';
+import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
+import {Hero} from '../components/Hero';
+import Projects from '../components/Projects.astro';
+import {Skills} from '../components/Skills';
+import Blog from '../components/Blog.astro';
+import {Contact} from '../components/Contact';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+
+    <title>{SITE_TITLE}</title>
+</head>
+<body>
+<Header/>
+
+<Hero/>
+
+<Projects/>
+
+<Skills/>
+
+<section id="blog" class="py-20 px-6 bg-muted">
+    <Blog/>
+</section>
+<Contact/>
+
+<Footer/>
+</body>
+</html>

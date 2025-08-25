@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import '../styles/App.css';
+import Content from '../content/about-me.md';
+import {Header} from '../components/Header';
+import {Footer} from '../components/Footer';
+import {Github, Linkedin} from 'lucide-react';
+import BaseHead from "../components/BaseHead.astro";
+---
+<html lang="en">
+<head>
+    <BaseHead title="About Me" description="About Me"/>
+    <title>About Me</title>
+<meta charset="UTF-8"/>
+</head>
+<body>
+<Header/>
+<main class="flex justify-center">
+    <div class="px-30">
+        <article
+                class="flex-y bg-card mx-20 my-10 max-w-6xl p-10 box-shadow border-2 border-foreground">
+            <div class="flex justify-center mx-auto">
+                <img class="rounded-full w-2xs" alt="picture of me, the developer, at the park"
+                     src="https://media.licdn.com/dms/image/v2/D4D03AQHYY1pgUz8nFA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731374743167?e=1758758400&v=beta&t=MnXzgLCPY6usfaant17xlsO3wOJFfBaxPxYFmAJ6_oA"/>
+            </div>
+
+            <div class="flex justify-center mx-auto gap-x-10 my-6">
+                <a href="https://www.github.com/sudo-tildo" class="bg-accent p-3 text-muted border-2 border-foreground">
+                    <Github/>
+                </a>
+                <a href="https://www.linkedin.com/in/breno-de-moraes"
+                   class="bg-accent p-3 text-muted border-2 border-foreground">
+                    <Linkedin/>
+                </a>
+            </div>
+
+            <div class="flex justify-center">
+                <h1 class="text-accent text-4xl font-bold mb-4 mx-auto">About Me</h1>
+            </div>
+
+            <div class="lg:px-30 text-justify space-y-5 prose">
+                <Content/>
+            </div>
+        </article>
+    </div>
+</main>
+<Footer/>
+</body>
+</html>
