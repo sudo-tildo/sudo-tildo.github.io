@@ -1,0 +1,104 @@
+---
+import {ScrollText, Calendar} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {Card, CardHeader, CardTitle, CardDescription, CardContent} from "@/components/ui/card";
+import {getCollection, type CollectionEntry} from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import {Footer} from "../../components/Footer";
+import {Header} from "../../components/Header";
+import {SITE_DESCRIPTION, SITE_TITLE} from "../../consts";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/components/ui/pagination";
+import type {Page} from "astro";
+
+export async function getStaticPaths({paginate}) {
+    const posts = (await getCollection("blog")).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+    return paginate(posts, {pageSize: 8});
+}
+
+const {page} = Astro.props as { page: Page<CollectionEntry<"blog">> };
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+<Header/>
+<main class="py-20 px-6 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-secondary text-secondary-foreground px-6 py-3 inline-flex mb-6 font-heading text-lg box-shadow-foreground">
+            <ScrollText/>
+        </div>
+        <div class="bg-secondary text-secondary-foreground px-6 py-3 flex items-center mb-12 w-1/6 box-shadow-foreground">
+            <h2 class="text-4xl font-bold text-secondary-foreground">Logs</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            {page.data.map((post) => (
+                    <Card className="brutalist-border brutalist-shadow bg-card hover:translate-x-1 hover:-translate-y-1 transition-transform">
+                        <CardHeader>
+                            <div class="flex items-center gap-2 text-sm font-mono text-muted-foreground mb-2">
+                                <Calendar className="h-4 w-4"/>
+                                {post.data.pubDate.toLocaleDateString("en-US", {})}
+                            </div>
+                            <CardTitle className="font-heading text-accent">
+                                {post.data.title}
+                            </CardTitle>
+                            <CardDescription className="font-mono">
+                                {post.data.description}
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <a href={`/blog/${post.id}/`}>
+                                <Button
+                                        size="sm"
+                                        className="brutalist-border bg-accent text-accent-foreground font-mono"
+                                >
+                                    READ MORE
+                                </Button>
+                            </a>
+                        </CardContent>
+                    </Card>
+            ))}
+        </div>
+
+        <Pagination className="mt-20">
+            <PaginationContent>
+                <PaginationItem>
+                    {page.url.prev ? (
+                            <PaginationPrevious href={page.url.prev}/>
+                    ) : (
+                            <PaginationPrevious href="" aria-disabled="true"/>
+                    )}
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationLink href="/blog/">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationEllipsis/>
+                </PaginationItem>
+                <PaginationItem>
+                    {page.url.next ? (
+                            <PaginationNext href={page.url.next}/>
+                    ) : (
+                            <PaginationNext href="" aria-disabled="true"/>
+                    )}
+                </PaginationItem>
+            </PaginationContent>
+        </Pagination>
+    </div>
+</main>
+<Footer/>
+</body>
+</html>
