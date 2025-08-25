@@ -11,11 +11,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://sudo-tildo.github.io',
   integrations: [sitemap(), react(), embeds(), mdx()],
-  image: {
-    domains: ['media.licdn.com']
-  },
   vite: {
     plugins: [tailwindcss()],
   },

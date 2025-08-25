@@ -2,7 +2,6 @@
 title:  "Starting Something New"
 description: "Also trying to stay on track and enjoy the process"
 pubDate:   'Mar 26 2025'
-heroImage: "https://media.istockphoto.com/id/1781660399/vector/stairs-up-person-line-icon-stairway-steps-direction-sign-moving-upstairs-editable-stroke.jpg?s=612x612&w=0&k=20&c=tFw6uZN1G_L8SqfRa64R7KdWeg_DDTz0xNwPlg-pzfg="
 ---
 
 I'm starting this blog to help me stay on track with my schedule. It will serve as a daily reminder that I need to improve—not because I want to get hired or fit into some company culture as a "role model" developer. Not even close. I do it simply because I genuinely enjoy programming and seeing good results. And as a natural consequence, that will make me a strong candidate for any position.
