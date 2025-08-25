@@ -1,0 +1,62 @@
+---
+import {ScrollText, Calendar} from "lucide-react";
+import {Button} from "./ui/button";
+import {Card, CardHeader, CardTitle, CardDescription, CardContent} from "./ui/card";
+import {getCollection} from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latest = posts.slice(0, 4);
+---
+
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-secondary text-secondary-foreground px-6 py-3 inline-flex mb-6 font-heading text-lg box-shadow-foreground">
+            <ScrollText/>
+        </div>
+        <div class="bg-secondary text-secondary-foreground px-6 py-3 flex items-center mb-12 w-1/6 box-shadow-foreground">
+            <h2 class="text-4xl font-bold text-secondary-foreground">Logs</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            {
+                latest.map((post) => (
+                        <Card
+                                className="brutalist-border brutalist-shadow bg-card hover:translate-x-1 hover:-translate-y-1 transition-transform">
+                            <CardHeader>
+                                <div class="flex items-center gap-2 text-sm font-mono text-muted-foreground mb-2">
+                                    <Calendar className="h-4 w-4"/>
+                                    {post.data.pubDate.toLocaleDateString('en-US', {})}
+                                </div>
+                                <CardTitle className="font-heading text-accent">
+                                    {post.data.title}
+                                </CardTitle>
+                                <CardDescription className="font-mono">
+                                    {post.data.description}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <a href={`/blog/${post.id}/`}>
+                                    <Button
+                                            size="sm"
+                                            className="brutalist-border bg-accent text-accent-foreground font-mono"
+                                    >
+                                        READ MORE
+                                    </Button>
+                                </a>
+                            </CardContent>
+                        </Card>
+                ))
+            }
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/blog">
+                <Button
+                        variant="outline"
+                        className="brutalist-border brutalist-shadow font-mono uppercase bg-transparent"
+                >
+                    VIEW ALL POSTS
+                </Button>
+            </a>
+        </div>
+    </div>
